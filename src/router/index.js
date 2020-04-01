@@ -1,23 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import ThreadShow from '@/components/ThreadShow'
+import PageHome from '../pages/PageHome'
+import PageThreadShow from '../pages/PageThreadShow'
 
-Vue.use(Router)
+Vue.use(Router) // tell vue to use the router plugin
 
-export default new Router({
+export default new Router({ // route options
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: HelloWorld
+      name: 'PageHome',
+      component: PageHome
     },
     {
       path: '/thread/:id',
-      name: 'ThreadShow',
-      component: ThreadShow,
-      props: true
+      name: 'PageThreadShow',
+      component: PageThreadShow,
+      props: true // pass params to the component as properties
     }
   ],
-  mode: 'history'
+  mode: 'history' // to remove the #
 })
