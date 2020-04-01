@@ -4,7 +4,8 @@
             <p>
                 <!--                <a :href="`/thread/${thread['.key']}`">{{thread.title}}</a>-->
                 <!--                <router-link :to="`/thread/${thread['.key']}`">{{thread.title}}</router-link>-->
-                <router-link :to="{name: 'ThreadShow', params:{id:thread['.key']}}">{{thread.title}}</router-link>
+<!--                name of the route -->
+                <router-link :to="{name: 'PageThreadShow', params:{id:thread['.key']}}">{{thread.title}}</router-link>
             </p>
             <p class="text-faded text-small">
                 By <a href="#"> </a>, {{thread.publishedAt}}
@@ -34,9 +35,9 @@
         type: Object
       }
     },
-    computed: {
+    computed: { // computed transform data
       repliesCount () {
-        return Object.keys(this.thread.posts).length - 1
+        return Object.keys(this.thread.posts).length - 1 // get the number of replies we are - 1 because the array starts with 0
       },
       user () {
         return sourceData.users[this.thread.userId]
