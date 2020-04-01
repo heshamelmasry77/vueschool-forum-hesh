@@ -45,10 +45,10 @@
       }
     },
     methods: {
-      addPost (eventData) {
-        console.log(eventData)
-        const post = eventData.post
-        const postId = eventData.post['.key']
+      addPost ({post}) {
+        // console.log(eventData)
+        // const post = eventData.post
+        const postId = post['.key']
         // Vue.set(Obj, PropertyName, value)
         this.$set(sourceData.posts, postId, post)
         this.$set(this.thread.posts, postId, postId)
