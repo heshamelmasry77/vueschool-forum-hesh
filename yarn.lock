@@ -2113,9 +2113,9 @@ eslint-plugin-html@^3.0.0:
     htmlparser2 "^3.8.2"
     semver "^5.4.1"
 
-eslint-plugin-import@^2.7.0:
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.20.0.tgz#d749a7263fb6c29980def8e960d380a6aa6aecaa"
+eslint-plugin-import@^2.20.2:
+  version "2.20.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.20.2.tgz#91fc3807ce08be4837141272c8b99073906e588d"
   dependencies:
     array-includes "^3.0.3"
     array.prototype.flat "^1.2.1"
