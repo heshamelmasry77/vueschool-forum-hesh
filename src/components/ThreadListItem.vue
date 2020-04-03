@@ -28,7 +28,6 @@
 </template>
 <script>
   import sourceData from '@/data.json'
-  import AppDate from './AppDate'
 
   export default {
     props: {
@@ -37,8 +36,6 @@
         type: Object
       }
     },
-    components: {AppDate},
-
     computed: { // computed transform data
       repliesCount () {
         return Object.keys(this.thread.posts).length - 1 // get the number of replies we are - 1 because the array starts with 0
