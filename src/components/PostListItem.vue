@@ -18,7 +18,6 @@
 </template>
 <script>
   import sourceData from '@/data.json'
-  import AppDate from './AppDate'
 
   export default {
     props: {
@@ -27,7 +26,6 @@
         type: Object
       }
     },
-    components: {AppDate},
     computed: { // computed transform data
       user () {
         return sourceData.users[this.post.userId]
