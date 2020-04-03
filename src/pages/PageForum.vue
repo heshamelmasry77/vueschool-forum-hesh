@@ -1,0 +1,52 @@
+<template>
+  <div class="forum-wrapper">
+    <div class="col-full push-top">
+      <div class="forum-header">
+        <div class="forum-details">
+          <h1>{{forum.name}}</h1>
+          <p class="text-lead">{{forum.description}}</p>
+        </div>
+        <a href="new-thread.html" class="btn-green btn-small">Start a thread</a>
+      </div>
+    </div>
+    <div class="col-full push-top">
+      <ThreadList :threads="threads"/>
+    </div>
+  </div>
+</template>
+
+<script>
+  import ThreadList from '@/components/ThreadList'
+  import sourceData from '@/data'
+
+  export default {
+    name: 'PageForum',
+    components: {ThreadList},
+    props: {
+      id: {
+        required: true,
+        type: String
+      }
+    },
+    data () {
+      return {}
+    },
+    computed: {
+      forum () {
+        return sourceData.forums[this.id] // the id is coming from the params id
+      },
+      threads () {
+        return Object.values(sourceData.threads) // converting to an array
+          .filter(thread => thread.forumId === this.id)
+      }
+    }
+  }
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!--using module css with classes-->
+<style scoped>
+  .forum-wrapper {
+    width: 100%;
+  }
+</style>
