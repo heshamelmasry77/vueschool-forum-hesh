@@ -1,20 +1,20 @@
 <template>
   <div class="col-full">
     <h1>welcome to the forum</h1>
-    <ThreadList :threads="threads"/>
+    <ForumList :forums="forums"/>
   </div>
 </template>
 
 <script>
   import sourceData from '../data'
-  import ThreadList from '../components/ThreadList'
+  import ForumList from '../components/ForumList'
 
   console.log(sourceData)
   export default {
-    components: {ThreadList},
+    components: {ForumList},
     data () {
       return {
-        threads: Object.values(sourceData.threads), // take only values from the object and get me an array, i can take the key only using
+        forums: Object.values(sourceData.forums), // take only values from the object and get me an array, i can take the key only using
         // Object.keys
         posts: sourceData.posts,
         users: sourceData.users
