@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import PageHome from '../pages/PageHome'
 import PageThreadShow from '../pages/PageThreadShow'
 import PageForum from '../pages/PageForum'
+import PageCategory from '../pages/PageCategory'
 import NotFound from '../pages/NotFound'
 
 Vue.use(Router) // tell vue to use the router plugin
@@ -13,7 +14,15 @@ export default new Router({ // route options
       path: '/',
       name: 'PageHome',
       component: PageHome
-    }, {
+    },
+    {
+      path: '/category/:id',
+      name: 'PageCategory',
+      component: PageCategory,
+      props: true
+
+    },
+    {
       path: '/forum/:id',
       name: 'PageForum',
       component: PageForum,

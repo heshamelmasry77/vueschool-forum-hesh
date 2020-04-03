@@ -1,23 +1,26 @@
 <template>
   <div class="col-full">
-    <h1>welcome to the forum</h1>
-    <CategoryList :categories="categories"/>
+    <h1>{{category.name}}</h1>
+    <CategoryListItem :category="category"/>
   </div>
 </template>
 
 <script>
   import sourceData from '../data'
-  import CategoryList from '../components/CategoryList'
+  import CategoryListItem from '../components/CategoryListItem'
 
   console.log(sourceData)
   export default {
-    components: {CategoryList},
-    data () {
-      return {
-        categories: Object.values(sourceData.categories), // take only values from the object and get me an array, i can take the key only using
-        // Object.keys
-        posts: sourceData.posts,
-        users: sourceData.users
+    components: {CategoryListItem},
+    props: {
+      id: {
+        required: true,
+        type: String
+      }
+    },
+    computed: {
+      category () {
+        return sourceData.categories[this.id] // the id comes from the route parameter
       }
     }
   }
