@@ -6,18 +6,22 @@
 </template>
 
 <script>
-  import sourceData from '../data'
   import CategoryList from '../components/CategoryList'
 
-  console.log(sourceData)
   export default {
     components: {CategoryList},
+    computed: {
+      categories () {
+        console.log(this.$store.state.categories)
+        console.log(Object.values(this.$store.state.categories))
+        return Object.values(this.$store.state.categories) // take only values from the object and get me an array, i can take the key only using
+      }
+    },
     data () {
       return {
-        categories: Object.values(sourceData.categories), // take only values from the object and get me an array, i can take the key only using
         // Object.keys
-        posts: sourceData.posts,
-        users: sourceData.users
+        posts: this.$store.state.posts,
+        users: this.$store.state.users
       }
     }
   }

@@ -20,7 +20,6 @@ export default new Router({ // route options
       name: 'PageCategory',
       component: PageCategory,
       props: true
-
     },
     {
       path: '/forum/:id',

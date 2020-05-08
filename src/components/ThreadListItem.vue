@@ -27,8 +27,6 @@
   </div>
 </template>
 <script>
-  import sourceData from '@/data.json'
-
   export default {
     props: {
       thread: {
@@ -41,7 +39,7 @@
         return Object.keys(this.thread.posts).length - 1 // get the number of replies we are - 1 because the array starts with 0
       },
       user () {
-        return sourceData.users[this.thread.userId]
+        return this.$store.state.users[this.thread.userId]
       }
     }
   }

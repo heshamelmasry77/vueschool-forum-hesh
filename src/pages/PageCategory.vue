@@ -6,10 +6,8 @@
 </template>
 
 <script>
-  import sourceData from '../data'
   import CategoryListItem from '../components/CategoryListItem'
 
-  console.log(sourceData)
   export default {
     components: {CategoryListItem},
     props: {
@@ -20,7 +18,8 @@
     },
     computed: {
       category () {
-        return sourceData.categories[this.id] // the id comes from the route parameter
+        console.log(this.$store.state.categories)
+        return this.$store.state.categories[this.id] // the id comes from the route parameter
       }
     }
   }

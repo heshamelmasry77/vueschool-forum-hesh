@@ -17,8 +17,6 @@
   </div>
 </template>
 <script>
-  import sourceData from '@/data.json'
-
   export default {
     props: {
       post: {
@@ -28,7 +26,7 @@
     },
     computed: { // computed transform data
       user () {
-        return sourceData.users[this.post.userId]
+        return this.$store.state.users[this.post.userId]
       },
       userPostsCount () {
         const postIds = this.user.posts // get a the post Ids
