@@ -33,10 +33,12 @@
     data () {
       return {
         // thread: this.$store.state.threads[this.$route.params.id], //another option to use
-        thread: this.$store.state.threads[this.id] // get all the threads which has the this id from the route params
       }
     },
     computed: {
+      thread () {
+        return this.$store.state.threads[this.id] // get all the threads which has the this id from the route params
+      },
       posts () {
         const postIds = Object.values(this.thread.posts)
         console.log(postIds) // all posts
