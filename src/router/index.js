@@ -41,6 +41,12 @@ export default new Router({ // route options
       props: true
     },
     {
+      path: '/me/edit',
+      name: 'ProfileEdit',
+      component: Profile,
+      props: {edit: true}
+    },
+    {
       path: '*',
       name: 'NotFound',
       // redirect: {name: 'PageHome'} // named route we can also do redirect : PageHome
