@@ -7,11 +7,15 @@
       </p>
 
       <div class="form-group">
-        <input v-model="activeUser.username" type="text" placeholder="Username" class="form-input text-lead text-bold">
+        <label>
+          <input v-model="activeUser.username" type="text" placeholder="Username" class="form-input text-lead text-bold">
+        </label>
       </div>
 
       <div class="form-group">
-        <input v-model="activeUser.name" type="text" placeholder="Full Name" class="form-input text-lead">
+        <label>
+          <input v-model="activeUser.name" type="text" placeholder="Full Name" class="form-input text-lead">
+        </label>
       </div>
 
       <div class="form-group">
@@ -42,7 +46,7 @@
       </div>
 
       <div class="btn-group space-between">
-        <button class="btn-ghost">Cancel</button>
+        <button @click.prevent="cancel" class="btn-ghost">Cancel</button>
         <button @click.prevent="save" type="submit" class="btn-blue">Save</button>
       </div>
     </div>
@@ -74,7 +78,11 @@
     },
     methods: {
       save () {
-        this.$store.dispatch('updateUser', {...this.activeUser}) // pass a colned object not the cariable direct to avoid the object update
+        this.$store.dispatch('updateUser', {...this.activeUser}) // pass a colned object not the variable direct to avoid the object update
+        this.$router.push({name: 'Profile'})
+      },
+      cancel () {
+        this.$router.push({name: 'Profile'})
       }
     }
   }
