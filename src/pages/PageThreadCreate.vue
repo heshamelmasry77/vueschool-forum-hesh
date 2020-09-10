@@ -1,7 +1,7 @@
 <template>
   <div class="col-full push-top">
 
-    <h1>Create new thread in <i>{{forum.name}}</i></h1>
+    <h1>Create new thread in <i>{{ forum.name }}</i></h1>
 
     <form @submit.prevent="save">
       <div class="form-group">
@@ -16,7 +16,7 @@
 
       <div class="btn-group">
         <button class="btn btn-ghost">Cancel</button>
-        <button class="btn btn-blue" type="submit" name="Publish">Publish </button>
+        <button class="btn btn-blue" type="submit" name="Publish">Publish</button>
       </div>
     </form>
   </div>
@@ -41,6 +41,7 @@ export default {
   methods: {
     save () {
       // dispatch action
+      this.$store.dispatch('createThread', {forumId: this.forum['.key'], title: this.title, text: this.text})
     }
   }
 }
